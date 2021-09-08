@@ -5,6 +5,9 @@ class Apartment
     @apartment_information = apartment_information
   end
 
+# There MUST be a better way to do this.
+# I can't think of one or find one right now, though.
+
   def number
     apartment_information[:number]
   end
