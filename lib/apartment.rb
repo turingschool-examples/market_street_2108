@@ -1,3 +1,4 @@
+
 class Apartment
   attr_reader :number,
               :monthly_rent,
@@ -15,6 +16,7 @@ class Apartment
 
   def add_renter(renter)
     @renter = renter
+    # require "pry"; binding.pry
   end
 
 end
