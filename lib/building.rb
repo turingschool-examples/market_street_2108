@@ -40,7 +40,7 @@ class Building
     renter = 0
     max_rent = 0
     @units.each do |unit|
-      if unit.monthly_rent > max_rent
+      if unit.monthly_rent > max_rent && unit.renter != nil
         max_rent = unit.monthly_rent
         renter = unit.renter
       end
