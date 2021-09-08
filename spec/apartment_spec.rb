@@ -24,7 +24,7 @@ describe Class do
   it 'has a renter key' do
     expect(@unit1.renter).to eq(nil)
     @unit1.add_renter(@renter1)
-    @unit1.renter
+    expect(@unit1.renter).to eq(@renter1)
   end
 
 end

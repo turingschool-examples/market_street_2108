@@ -31,10 +31,32 @@ describe Class do
     @unit1.add_renter(@renter1)
     @building.add_renters
     expect(@building.renters).to eq(["Aurora"])
+  it 'has can add two names' do
+    @building.add_unit(@unit1)
+    @building.add_unit(@unit2)
+    @unit1.add_renter(@renter1)
     @unit2.add_renter(@renter2)
     @building.add_renters
     expect(@building.renters).to eq(["Aurora", "Tim"])
-
   end
-
+  it "can calculate average rent" do
+    expect(@building.average_rent).to eq(1099.5)
+  end
+  end
+  describe "Iteration 3" do
+    before(:each) do
+      @building = Building.new
+      @unit1 = Apartment.new({number: "A1", monthly_rent: 1200, bathrooms: 1, bedrooms: 1})
+      @unit2 = Apartment.new({number: "B2", monthly_rent: 999, bathrooms: 1, bedrooms: 2})
+      @unit3 = Apartment.new({number: "C3", monthly_rent: 1150, bathrooms: 2, bedrooms: 2})
+      @unit4 = Apartment.new({number: "D4", monthly_rent: 1500, bathrooms: 2, bedrooms: 3})
+      @renter1 = Renter.new("Spencer")
+      @building.add_unit(unit1)
+      @building.add_unit(unit2)
+      @building.add_unit(unit3)
+    end
+    it "has rented units array" do
+      expect(@building.rented_units).to eq([])
+    end
+  end
 end

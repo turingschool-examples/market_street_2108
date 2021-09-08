@@ -1,6 +1,8 @@
 require 'renter'
 
 class Apartment
+  attr_reader :apartment_hash,
+              :renter
 
 def initialize(apartment_hash)
   @apartment_hash = apartment_hash
@@ -22,12 +24,8 @@ def bedrooms
   @apartment_hash[:bedrooms]
 end
 
-def renter
-  @apartment_hash[:renter]
-end
-
 def add_renter(renter)
-  @apartment_hash[:renter] = renter
+  @renter = renter
 end
 
 
