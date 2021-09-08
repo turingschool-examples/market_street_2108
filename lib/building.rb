@@ -36,4 +36,16 @@ class Building
     @rented_units
   end
 
+  def renter_with_highest_rent
+    renter = 0
+    max_rent = 0
+    @units.each do |unit|
+      if unit.monthly_rent > max_rent
+        max_rent = unit.monthly_rent
+        renter = unit.renter
+      end
+    end
+    renter
+  end
+
 end
