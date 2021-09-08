@@ -14,4 +14,8 @@ RSpec.describe Apartment do
   it 'can return a renters name' do
     expect(@renter1.name).to eq("Jessie")
   end
+
+  it 'can return unit number' do
+    expect(unit1.number).to eq("A1")
+  end
 end
