@@ -1,2 +1,7 @@
 class Building
-end 
+  attr_reader :units
+
+  def initialize
+    @units = []
+  end
+end
