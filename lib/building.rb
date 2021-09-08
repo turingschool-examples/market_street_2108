@@ -2,8 +2,9 @@ class Building
 
   def initialize
     # @apartment = Apartment.new
-    @units = []
-    @renters = []
+    @units        = []
+    @renters      = []
+    @rented_units = []
   end
 
   def units
@@ -28,7 +29,8 @@ class Building
     (rent1 + rent2) / 2
   end
 
-  def building.rented_units
+  def rented_units
+    @rented_units
   end
 
 end

@@ -70,11 +70,35 @@ RSpec.describe do
 
     expect(building.average_rent).to eq(1099.5)
   end
+
+  it 'can find rented units' do
+    building = Building.new
+    unit1 = Apartment.new({number: "A1", monthly_rent: 1200, bathrooms: 1, bedrooms: 1})
+    unit2 = Apartment.new({number: "B2", monthly_rent: 999, bathrooms: 2, bedrooms: 2})
+    unit3 = Apartment.new({number: "C3", monthly_rent: 1150, bathrooms: 2, bedrooms: 2})
+    unit4 = Apartment.new({number: "D4", monthly_rent: 1500, bathrooms: 2, bedrooms: 3})
+    renter1 = Renter.new('Spencer')
+    renter2 = Renter.new('Tim')
+
+    expect(building.rented_units).to eq([])
+  end
+
+  xit 'adds renter to unit' do
+    building = Building.new
+    unit1 = Apartment.new({number: "A1", monthly_rent: 1200, bathrooms: 1, bedrooms: 1})
+    unit2 = Apartment.new({number: "B2", monthly_rent: 999, bathrooms: 2, bedrooms: 2})
+    unit3 = Apartment.new({number: "C3", monthly_rent: 1150, bathrooms: 2, bedrooms: 2})
+    unit4 = Apartment.new({number: "D4", monthly_rent: 1500, bathrooms: 2, bedrooms: 3})
+    renter1 = Renter.new('Spencer')
+    renter2 = Renter.new('Tim')
+
+    unit2.add_renter(renter1)
+
+    expect(building.rented_units).to eq([unit2])
+  end
 end
 
 
-# pry(main)> building.rented_units
-# # => []
 #
 # pry(main)> unit2.add_renter(renter1)
 #

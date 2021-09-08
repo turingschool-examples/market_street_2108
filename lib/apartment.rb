@@ -1,10 +1,10 @@
 class Apartment
 
   def initialize(unit)
-    @number = unit[:number]
-    @monthly_rent = unit[:monthly_rent]
-    @bathrooms = unit[:bathrooms]
-    @bedrooms = unit[:bedrooms]
+    @number         = unit[:number]
+    @monthly_rent   = unit[:monthly_rent]
+    @bathrooms      = unit[:bathrooms]
+    @bedrooms       = unit[:bedrooms]
   end
 
   def number
@@ -24,9 +24,10 @@ class Apartment
   end
 
   def renter
+    @renter
   end
 
   def add_renter(renter1)
-    renter << (renter1)
+    @renter << (renter1)
   end
 end
