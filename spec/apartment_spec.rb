@@ -30,4 +30,8 @@ RSpec.describe Apartment do
   it 'can return the number of bedrooms' do
     expect(@unit1.bedrooms).to eq(1)
   end
+
+  it 'can return renter for unit' do
+    expect(@unit1.renter).to eq(nil)
+  end
 end
