@@ -3,9 +3,9 @@ require './lib/renter.rb'
 require './lib/apartment.rb'
 
 RSpec.describe do
-  context 'Apartment Instantiation' do
+  context 'apartment instantiation' do
     before :each do
-      @unit1 = Apartment.new("A1", 1200, 1, 1)
+      @unit1 = Apartment.new({number: "A1", monthly_rent: 1200, bathrooms: 1, bedrooms: 1})
     end
 
     it 'exists' do
@@ -29,9 +29,9 @@ RSpec.describe do
     end
   end
 
-  context 'Renter Interaction' do
+  context 'renter interaction' do
     before :each do
-      @unit1 = Apartment.new("A1", 1200, 1, 1)
+      @unit1 = Apartment.new({number: "A1", monthly_rent: 1200, bathrooms: 1, bedrooms: 1})
       @renter1 = Renter.new("Jessie")
     end
 

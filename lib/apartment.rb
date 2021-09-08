@@ -5,11 +5,11 @@ class Apartment
               :bedrooms,
               :renter
 
-  def initialize(number, monthly_rent, bathrooms, bedrooms)
-    @number         = number
-    @monthly_rent   = monthly_rent
-    @bathrooms      = bathrooms
-    @bedrooms       = bedrooms
+  def initialize(attributes)
+    @number         = attributes.fetch(:number)
+    @monthly_rent   = attributes.fetch(:monthly_rent)
+    @bathrooms      = attributes.fetch(:bathrooms)
+    @bedrooms       = attributes.fetch(:bedrooms)
     @renter         = nil
   end
 
