@@ -25,13 +25,14 @@ describe Class do
     @building.add_unit(@unit2)
     expect(@building.renters).to eq([])
   end
-  it 'has renters array' do
+  it 'has renters array with renter in it' do
     @building.add_unit(@unit1)
     @building.add_unit(@unit2)
     @unit1.add_renter(@renter1)
     @building.add_renters
     expect(@building.renters).to eq(["Aurora"])
-  it 'has can add two names' do
+  end
+  it 'can add two names' do
     @building.add_unit(@unit1)
     @building.add_unit(@unit2)
     @unit1.add_renter(@renter1)
@@ -40,6 +41,8 @@ describe Class do
     expect(@building.renters).to eq(["Aurora", "Tim"])
   end
   it "can calculate average rent" do
+    @building.add_unit(@unit1)
+    @building.add_unit(@unit2)
     expect(@building.average_rent).to eq(1099.5)
   end
   end
@@ -51,12 +54,23 @@ describe Class do
       @unit3 = Apartment.new({number: "C3", monthly_rent: 1150, bathrooms: 2, bedrooms: 2})
       @unit4 = Apartment.new({number: "D4", monthly_rent: 1500, bathrooms: 2, bedrooms: 3})
       @renter1 = Renter.new("Spencer")
-      @building.add_unit(unit1)
-      @building.add_unit(unit2)
-      @building.add_unit(unit3)
+      @building.add_unit(@unit1)
+      @building.add_unit(@unit2)
+      @building.add_unit(@unit3)
     end
     it "has rented units array" do
       expect(@building.rented_units).to eq([])
     end
+    it "has rented units after added renter" do
+      @unit2.add_renter(@renter1)
+      expect(@building.rented_units).to eq([@unit2])
+    end
+    it "has renter with highest rent" do
+      @unit2.add_renter(@renter1)
+      expect(@building.renter_with_highest_rent).to eq(renter1)
+      renter2 = Renter.new("Jessie")
+      unit1.add_renter(renter2)
+      expect(@building.renter_with_highest_rent).to eq(renter2)
+    end
+
   end
-end

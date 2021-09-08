@@ -2,7 +2,8 @@ require 'renter'
 
 class Apartment
   attr_reader :apartment_hash,
-              :renter
+              :renter,
+              :name
 
 def initialize(apartment_hash)
   @apartment_hash = apartment_hash
@@ -26,6 +27,12 @@ end
 
 def add_renter(renter)
   @renter = renter
+end
+
+def name
+  if @renter != nil
+    @renter.name
+  end
 end
 
 

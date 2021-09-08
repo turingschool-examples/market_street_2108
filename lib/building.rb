@@ -16,9 +16,10 @@ class Building
   end
 
   def add_renters
-    require "pry"; binding.pry
     @units.each do |unit|
-      @renters << unit.name
+      if unit.name != nil
+        @renters << unit.name
+      end
     end
   end
 
@@ -29,5 +30,11 @@ class Building
       sum += unit.monthly_rent
     end
     sum / total
+  end
+
+  def rented_units
+    @units.find_all do |unit|
+      unit.renter != nil
+    end
   end
 end
