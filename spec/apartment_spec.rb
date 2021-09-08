@@ -14,5 +14,8 @@ describe Class do
   it 'has monthly_rent' do
     expect(@unit1.monthly_rent).to eq(1200)
   end
+  it 'has bathrooms' do
+    expect(@unit1.bathrooms).to eq(1)
+  end
 
 end

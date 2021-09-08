@@ -11,6 +11,10 @@ def number
 end
 
 def monthly_rent
-  
+  @apartment_hash[:monthly_rent]
+end
+
+def bathrooms
+  @apartment_hash[:bathrooms]
 end
 end
