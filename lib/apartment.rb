@@ -9,4 +9,8 @@ end
 def number
   @apartment_hash[:number]
 end
+
+def monthly_rent
+  
+end
 end
