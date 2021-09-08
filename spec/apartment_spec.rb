@@ -18,4 +18,8 @@ RSpec.describe Apartment do
   it 'can return unit number' do
     expect(@unit1.number).to eq("A1")
   end
+
+  it 'can return monthly rent' do
+    expect(@unit1.monthly_rent).to eq(1200)
+  end
 end
