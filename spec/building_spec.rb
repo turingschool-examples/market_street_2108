@@ -21,6 +21,6 @@ RSpec.describe Building do
     @building.add_unit(@unit1)
     @building.add_unit(@unit2)
 
-    expect(building.units).to be_an Array
+    expect(@building.units).to eq([@unit1, @unit2])
   end
 end
