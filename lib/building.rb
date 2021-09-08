@@ -31,4 +31,16 @@ class Building
   def add_rented_units(unit)
     @rented_units << unit
   end
+
+  def renter_with_highest_rent
+    highest_renter = nil
+    @units.each do |unit|
+      if unit.renter != nil
+        @units.max_by do |unit|
+          highest_renter = renters
+        end
+      end
+    end
+    highest_renter
+  end
 end
