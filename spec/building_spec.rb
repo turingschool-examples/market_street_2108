@@ -80,4 +80,16 @@ describe Building do
     end
   end
 
+  describe '#units_by_number_of_bedrooms' do
+    xit 'creates a hash with bedrooms as keys and units as values' do
+      @building.add_unit(@unit1)
+      @building.add_unit(@unit2)
+      @building.add_unit(@unit3)
+      @building.add_unit(@unit4)
+      renter1 = Renter.new("Spencer")
+      renter2 = Renter.new("Jessie")
+      renter3 = Renter.new("Max")
+    end
+  end
+
 end
