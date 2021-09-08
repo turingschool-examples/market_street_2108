@@ -62,7 +62,7 @@ describe Building do
       renter1 = Renter.new("Spencer")
       @unit2.add_renter(renter1)
 
-      expect(@building.rented_units).to eq(@unit2)
+      expect(@building.rented_units).to eq([@unit2])
     end
   end
 
