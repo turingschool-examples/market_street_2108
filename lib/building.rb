@@ -39,16 +39,7 @@ class Building
   end
 
   def renter_with_highest_rent
-    most_expensive_renter = ""
-    max_rent = 0
-    filtered_units.each do |unit|
-      if max_rent <= unit.monthly_rent
-        most_expensive_renter = unit.renter
-        max_rent = unit.monthly_rent
-      else
-      end
-    end
-    most_expensive_renter
+    (filtered_units.max { |u1, u2| u1.monthly_rent <=> u2.monthly_rent }).renter
   end
 
   def filtered_units
