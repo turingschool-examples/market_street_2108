@@ -3,6 +3,7 @@ require "./lib/apartment"
 
 describe Class do
   before(:each) do
+    @renter1 = Renter.new("Jessie")
     @unit1 = Apartment.new({number: "A1", monthly_rent: 1200, bathrooms: 1, bedrooms: 1})
   end
   it 'exists' do
@@ -19,6 +20,11 @@ describe Class do
   end
   it 'has bedrooms count' do
     expect(@unit1.bedrooms).to eq(1)
+  end
+  it 'has a renter key' do
+    expect(@unit1.renter).to eq(nil)
+    unit1.add_renter(renter1)
+    unit1.renter
   end
 
 end

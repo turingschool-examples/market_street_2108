@@ -18,5 +18,7 @@ def bathrooms
   @apartment_hash[:bathrooms]
 end
 
-
+def bedrooms
+  @apartment_hash[:bedrooms]
+end
 end
