@@ -34,7 +34,7 @@ RSpec.describe Building do
     @building.add_unit(@unit1)
     @building.add_unit(@unit2)
     @unit1.add_renter(@renter1)
-    
+      
     expect(@building.renters).to eq(["Aurora"])
   end
 end
