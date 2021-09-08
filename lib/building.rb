@@ -1,6 +1,6 @@
 class Building
 
-  attr_reader :units,
+  attr_reader :units
               #:renters
 
   def initialize
@@ -12,5 +12,11 @@ class Building
     @units.push(unit)
   end
 
+  def renters
+    @units.each do |unit|
+      @renters.push(unit.renter.name)
+    end
+  @renters
+  end
 
 end
