@@ -16,6 +16,6 @@ RSpec.describe Apartment do
   end
 
   it 'can return unit number' do
-    expect(unit1.number).to eq("A1")
+    expect(@unit1.number).to eq("A1")
   end
 end
