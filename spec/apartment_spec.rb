@@ -1,7 +1,7 @@
 require './lib/renter'
 require './lib/apartment'
 
-RSpec.describe 'Iteration 2' do
+RSpec.describe 'Iteration 1' do
   before :each do
     @renter1 = Renter.new("Jessie")
     @unit1 = Apartment.new({number: "A1", monthly_rent: 1200, bathrooms: 1, bedrooms: 1})
