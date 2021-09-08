@@ -14,8 +14,11 @@ describe Class do
   it 'has monthly_rent' do
     expect(@unit1.monthly_rent).to eq(1200)
   end
-  it 'has bathrooms' do
+  it 'has bathrooms count' do
     expect(@unit1.bathrooms).to eq(1)
+  end
+  it 'has bedrooms count' do
+    expect(@unit1.bedrooms).to eq(1)
   end
 
 end
