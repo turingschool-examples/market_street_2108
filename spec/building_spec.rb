@@ -10,6 +10,12 @@ describe Building do
       building = Building.new
       expect(building).to be_an_instance_of(Building)
     end
+
+    it 'has readable attributes' do
+      building = Building.new
+
+      expect(building.units).to eq([])
+    end
   end
 
 end
