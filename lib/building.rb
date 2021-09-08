@@ -26,11 +26,12 @@ class Building
   end
 
   def rented_units
-    if @units == []
+    if @units.nil?
       rented_units = []
     else
+      @units.compact!
       rented_units = @units.map do |unit|
-        if unit != nil && unit.renter != nil
+        if unit.renter != nil
           unit
         end
       end
