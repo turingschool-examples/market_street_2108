@@ -23,4 +23,8 @@ RSpec.describe Building do
 
     expect(@building.units).to eq([@unit1, @unit2])
   end
+
+  it 'can return renters' do
+    expect(@building.renters).to eq([])
+  end
 end
