@@ -34,4 +34,10 @@ RSpec.describe Apartment do
   it 'can return renter for unit' do
     expect(@unit1.renter).to eq(nil)
   end
+
+  it 'can add renter to apartment' do
+    @unit1.add_renter(@renter1)
+
+    expect(@unit1.renter).to eq("Jessie")
+  end
 end
