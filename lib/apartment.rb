@@ -1,5 +1,6 @@
 class Apartment
-    attr_reader :renter
+    attr_reader :renter,
+                :unit
 
     def initialize(unit)
         @unit = unit
@@ -22,7 +23,11 @@ class Apartment
         @unit[:bedrooms]
     end
     
+    def renter
+        @unit[:renter]
+    end
+
     def add_renter(new_renter)
-        @renter = new_renter
+        @unit[:renter] = new_renter
     end
 end
