@@ -19,8 +19,8 @@ describe Building do
     end
   end
 
-  describe '#add_units' do
-    it 'adds units to a units array' do
+  describe '#add_unit' do
+    it 'adds unit to a units array' do
       unit1 = Apartment.new({number: "A1", monthly_rent: 1200, bathrooms: 1, bedrooms: 1})
       unit2 = Apartment.new({number: "B2", monthly_rent: 999, bathrooms: 2, bedrooms: 2})
       @building.add_unit(unit1)
