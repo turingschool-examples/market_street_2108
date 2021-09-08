@@ -66,4 +66,18 @@ describe Building do
     end
   end
 
+  describe '#renter_with_highest_rent' do
+    it 'returns renter with highest rent' do
+      @building.add_unit(@unit1)
+      @building.add_unit(@unit2)
+      @building.add_unit(@unit3)
+      renter1 = Renter.new("Spencer")
+      renter2 = Renter.new("Jessie")
+      @unit2.add_renter(renter1)
+      @unit1.add_renter(renter2)
+
+      expect(@building.renter_with_highest_rent).to eq(renter2)
+    end
+  end
+
 end
