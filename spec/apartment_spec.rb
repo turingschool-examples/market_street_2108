@@ -26,4 +26,8 @@ RSpec.describe Apartment do
   it 'can return the number of bathrooms' do
     expect(@unit1.bathrooms).to eq(1)
   end
+
+  it 'can return the number of bedrooms' do
+    expect(@unit1.bedrooms).to eq(1)
+  end
 end
