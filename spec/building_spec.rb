@@ -7,6 +7,7 @@ describe Class do
     @unit1 = Apartment.new({number: "A1", monthly_rent: 1200, bathrooms: 1, bedrooms: 1})
     @unit2 = Apartment.new({number: "B2", monthly_rent: 999, bathrooms: 2, bedrooms: 2})
     @renter1 = Renter.new("Aurora")
+    @renter2 = Renter.new("Tim")
   end
   it 'exists' do
     expect(@building).to be_a(Building)
@@ -28,7 +29,12 @@ describe Class do
     @building.add_unit(@unit1)
     @building.add_unit(@unit2)
     @unit1.add_renter(@renter1)
-    expect(@building.renters).to eq([@renter1])
+    @building.add_renters
+    expect(@building.renters).to eq(["Aurora"])
+    @unit2.add_renter(@renter2)
+    @building.add_renters
+    expect(@building.renters).to eq(["Aurora", "Tim"])
+
   end
 
 end
