@@ -19,4 +19,12 @@ RSpec.describe 'Iteration 2' do
 
     expect(@building.units).to eq([])
   end
+
+  it 'can add units' do
+
+    @building.add_unit(@unit1)
+    @building.add_unit(@unit2)
+
+    expect(@building.units).to eq([@unit1, @unit2])
+  end
 end
