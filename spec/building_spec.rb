@@ -25,12 +25,11 @@ RSpec.describe do
       @unit2 = Apartment.new({number: "B2", monthly_rent: 999, bathrooms: 2, bedrooms: 2})
       @renter1 = Renter.new("Aurora")
       @renter2 = Renter.new("Tim")
+      @building.add_unit(@unit1)
+      @building.add_unit(@unit2)
     end
 
     it 'can add units' do
-      @building.add_unit(@unit1)
-      @building.add_unit(@unit2)
-
       expect(@building.units).to eq [@unit1, @unit2]
     end
 
@@ -43,6 +42,7 @@ RSpec.describe do
       expect(@building.renters).to eq ["Aurora"]
 
       @unit2.add_renter(@renter2)
+
       expect(@building.renters).to eq ["Aurora", "Tim"]
     end
 
