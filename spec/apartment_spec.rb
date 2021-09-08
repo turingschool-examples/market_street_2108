@@ -33,7 +33,7 @@ RSpec.describe 'Iteration 1 cont.' do
   it "can add renter" do
     @renter1 = Renter.new("Jessie")
 
-    expect(@unit1.add_renter).to eq([@renter1])
+    expect(@unit1.add_renter).to eq([@jessie])
   end
 
 end

@@ -15,7 +15,7 @@ class Apartment
   end
 
   def add_renter
-    @renter1 = Renter.new("Jessie")
-    @renter << @renter1
+    
+    @renter << @jessie
   end
 end
