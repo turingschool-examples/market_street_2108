@@ -36,4 +36,13 @@ RSpec.describe 'Iteration 2' do
 
     expect(@unit1.bedrooms).to eq(1)
   end
+
+  it 'can add a renter' do
+
+    expect(@unit1.renter).to eq(nil)
+
+    @unit1.add_renter(@renter1)
+
+    expect(@unit1.renter).to eq(@renter1)
+  end
 end
