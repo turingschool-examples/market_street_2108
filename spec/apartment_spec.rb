@@ -1,9 +1,9 @@
 require './lib/renter'
 require './lib/apartment'
 
-RSpec.describe 'Iteration 2' do
+RSpec.describe 'Iteration 1 cont.' do
   before :each do
-    @unit1 = Apartment.new("A1", 1200, 1, 1)
+    @unit1 = Apartment.new({number: "A1", monthly_rent: 1200, bathrooms: 1, bedrooms: 1})
   end
 
   it "is an instance of Apartment" do
@@ -16,5 +16,24 @@ RSpec.describe 'Iteration 2' do
 
   it "has a monthly rent" do
     expect(@unit1.monthly_rent).to eq(1200)
-  end 
+  end
+
+  it "has bathrooms" do
+    expect(@unit1.bathrooms).to eq(1)
+  end
+
+  it "has bedrooms" do
+    expect(@unit1.bedrooms).to eq(1)
+  end
+
+  it "has no renter" do
+    expect(@unit1.renter).to eq([])
+  end
+
+  it "can add renter" do
+    @renter1 = Renter.new("Jessie")
+
+    expect(@unit1.add_renter).to eq([@renter1])
+  end
+
 end
