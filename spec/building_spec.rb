@@ -79,4 +79,29 @@ describe 'Iteration 3' do
 
     expect(@building.rented_units).to eq([@unit2])
   end
+
+  it 'has a renter with the highest rent' do
+    renter1 = Renter.new("Spencer")
+    @building.add_unit(@unit1)
+    @building.add_unit(@unit2)
+    @building.add_unit(@unit3)
+    @unit2.add_renter(renter1)
+    @building.add_rented_units(@unit2)
+
+    expect(@building.renter_with_highest_rent).to eq(renter1)
+  end
+
+  it 'has a renter with the highest rent' do
+    renter1 = Renter.new("Spencer")
+    renter2 = Renter.new("Jessie")
+    @building.add_unit(@unit1)
+    @building.add_unit(@unit2)
+    @building.add_unit(@unit3)
+    @unit2.add_renter(renter1)
+    @unit1.add_renter(renter2)
+    @building.add_rented_units(@unit2)
+    @building.add_rented_units(@unit1)
+
+    expect(@building.renter_with_highest_rent).to eq(renter2)
+  end
 end
