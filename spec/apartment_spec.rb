@@ -38,6 +38,6 @@ RSpec.describe Apartment do
   it 'can add renter to apartment' do
     @unit1.add_renter(@renter1)
 
-    expect(@unit1.renter).to eq("Jessie")
+    expect(@unit1.renter).to eq([@renter1])
   end
 end
