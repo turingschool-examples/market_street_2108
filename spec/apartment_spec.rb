@@ -6,6 +6,10 @@ describe Class do
     @unit1 = Apartment.new({number: "A1", monthly_rent: 1200, bathrooms: 1, bedrooms: 1})
   end
   it 'exists' do
-    expect(unit1).to be_a(Apartment)
+    expect(@unit1).to be_a(Apartment)
   end
+  it 'has a number' do
+    expect(@unit1.number).to eq("A1")
+  end
+
 end
