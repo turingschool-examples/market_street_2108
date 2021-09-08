@@ -16,6 +16,7 @@ describe Building do
 
     it 'has readable attributes' do
       expect(@building.units).to eq([])
+      expect(@building.renters).to eq([])
     end
   end
 
