@@ -48,7 +48,7 @@ describe Building do
       @building.add_unit(@unit1)
       @building.add_unit(@unit2)
 
-      expect(building.average_rent).to eq(1099.5)
+      expect(@building.average_rent).to eq(1099.5)
     end
   end
 
