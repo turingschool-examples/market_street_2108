@@ -18,7 +18,7 @@ describe Apartment do
       expect(@unit1.monthly_rent).to eq(1200)
       expect(@unit1.bathrooms).to eq(1)
       expect(@unit1.bedrooms).to eq(1)
-      expect(@unit1.bedrooms).to be_nil
+      expect(@unit1.renter).to be_nil
     end
   end
 
