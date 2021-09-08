@@ -33,6 +33,8 @@ describe Building do
 
   describe '#add_renter' do
     it 'adds a renter to a renters array' do
+      unit1 = Apartment.new({number: "A1", monthly_rent: 1200, bathrooms: 1, bedrooms: 1})
+      unit2 = Apartment.new({number: "B2", monthly_rent: 999, bathrooms: 2, bedrooms: 2})
       renter1 = Renter.new("Aurora")
       renter2 = Renter.new("Tim")
       unit1.add_renter(renter1)
