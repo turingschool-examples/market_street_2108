@@ -31,4 +31,9 @@ RSpec.describe 'Iteration 2' do
 
     expect(@unit1.bathrooms).to eq(1)
   end
+
+  it 'can have bedrooms' do
+
+    expect(@unit1.bedrooms).to eq(1)
+  end
 end
