@@ -10,3 +10,4 @@ RSpec.describe Building do
   it 'exists' do
     expect(@building).to be_an_instance_of Building
   end
+end
