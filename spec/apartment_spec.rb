@@ -13,4 +13,8 @@ RSpec.describe 'Iteration 2' do
   it 'has a number' do
     expect(@unit1.number).to eq("A1")
   end
+
+  it "has a monthly rent" do
+    expect(@unit1.monthly_rent).to eq(1200)
+  end 
 end
