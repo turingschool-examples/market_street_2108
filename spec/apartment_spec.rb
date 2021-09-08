@@ -22,4 +22,8 @@ RSpec.describe Apartment do
   it 'can return monthly rent' do
     expect(@unit1.monthly_rent).to eq(1200)
   end
+
+  it 'can return the number of bathrooms' do
+    expect(@unit1.bathrooms).to eq(1)
+  end
 end
