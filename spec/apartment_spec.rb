@@ -10,4 +10,8 @@ RSpec.describe Apartment do
   it 'exists' do
     expect(@unit1).to be_an_instance_of Apartment
   end
+
+  it 'can return a renters name' do
+    expect(@renter1.name).to eq("Jessie")
+  end
 end

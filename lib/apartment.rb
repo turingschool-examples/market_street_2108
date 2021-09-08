@@ -1,5 +1,7 @@
 class Apartment
 
-  def initialize(unit_info)
+
+  def initialize(renter)
+
   end
 end
