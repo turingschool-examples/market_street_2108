@@ -8,4 +8,7 @@ describe Class do
   it 'exists' do
     expect(@building).to be_a(Building)
   end
+  it 'has a units array' do
+    expect(@building.units).to eq([])
+  end
 end
