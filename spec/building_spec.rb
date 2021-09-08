@@ -41,11 +41,14 @@ describe Building do
 
       expect(@building.renters).to eq(["Aurora", "Tim"])
     end
-  end 
+  end
 
   describe '#average_rent' do
     it 'calculates average rent' do
+      @building.add_unit(@unit1)
+      @building.add_unit(@unit2)
 
+      expect(building.average_rent).to eq(1099.5)
     end
   end
 
