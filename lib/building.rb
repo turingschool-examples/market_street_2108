@@ -21,16 +21,12 @@ class Building
   end
 
   def combined_rent
-    combined_rent = 0
-    @units.each do |unit|
-      combined_rent += unit.monthly_rent
-    end
-    combined_rent.to_f
+    units.sum { |unit| unit.monthly_rent}
   end
 
   def rented_units
     rented_units = []
-    units.each do |unit|
+    units.each do |unit| # I didn't use map for this because non-qualifying units would return nil
       if unit.renter != nil
         rented_units << unit
       end
