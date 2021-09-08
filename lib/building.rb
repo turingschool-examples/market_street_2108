@@ -47,6 +47,10 @@ class Building
   end
 
   def units_by_number_of_bedrooms
-
+    bedroom_hash = Hash.new([])
+    @units.each do |unit|
+      bedroom_hash[unit.bedrooms] << unit.apartment_hash[:number]
+    end
+    bedroom_hash
   end
 end

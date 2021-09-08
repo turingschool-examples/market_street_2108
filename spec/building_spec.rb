@@ -73,7 +73,7 @@ describe Class do
       expect(@building.renter_with_highest_rent).to eq(renter2)
     end
     it "has units by number of bedrooms" do
-      expect(building.units_by_number_of_bedrooms).to eq({
+      expect(@building.units_by_number_of_bedrooms).to eq({
           3 => ["D4" ],
           2 => ["B2", "C3"],
           1 => ["A1"]
