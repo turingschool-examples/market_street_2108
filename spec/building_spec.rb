@@ -31,4 +31,15 @@ describe Building do
     end
   end
 
+  describe '#add_renter' do
+    it 'adds a renter to a renters array' do
+      renter1 = Renter.new("Aurora")
+      renter2 = Renter.new("Tim")
+      unit1.add_renter(renter1)
+      unit2.add_renter(renter2)
+
+      expect(@building.renters).to eq(["Aurora", "Tim"])
+    end
+  end
+
 end
