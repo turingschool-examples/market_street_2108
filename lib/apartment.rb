@@ -21,4 +21,14 @@ end
 def bedrooms
   @apartment_hash[:bedrooms]
 end
+
+def renter
+  @apartment_hash[:renter]
+end
+
+def add_renter(renter)
+  @apartment_hash[:renter] = renter
+end
+
+
 end
