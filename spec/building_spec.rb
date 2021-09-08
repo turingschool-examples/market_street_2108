@@ -7,6 +7,8 @@ RSpec.describe Building do
     @building = Building.new
     @unit1 = Apartment.new({number: "A1", monthly_rent: 1200, bathrooms: 1, bedrooms: 1})
     @unit2 = Apartment.new({number: "B2", monthly_rent: 999, bathrooms: 2, bedrooms: 2})
+    @renter1 = Renter.new("Aurora")
+    @renter2 = Renter.new("Tim")
   end
 
   it 'exists' do
@@ -26,5 +28,13 @@ RSpec.describe Building do
 
   it 'can return renters' do
     expect(@building.renters).to eq([])
+  end
+
+  it 'can add renters' do
+    @building.add_unit(@unit1)
+    @building.add_unit(@unit2)
+    @unit1.add_renter(@renter1)
+    
+    expect(@building.renters).to eq(["Aurora"])
   end
 end
