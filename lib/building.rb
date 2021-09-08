@@ -37,4 +37,16 @@ class Building
       unit.renter != nil
     end
   end
+
+  def renter_with_highest_rent
+
+    high_rent_unit = rented_units.max_by do |unit|
+      unit.monthly_rent
+    end
+    high_rent_unit.renter
+  end
+
+  def units_by_number_of_bedrooms
+
+  end
 end

@@ -67,10 +67,16 @@ describe Class do
     end
     it "has renter with highest rent" do
       @unit2.add_renter(@renter1)
-      expect(@building.renter_with_highest_rent).to eq(renter1)
+      expect(@building.renter_with_highest_rent).to eq(@renter1)
       renter2 = Renter.new("Jessie")
-      unit1.add_renter(renter2)
+      @unit1.add_renter(renter2)
       expect(@building.renter_with_highest_rent).to eq(renter2)
     end
-
+    it "has units by number of bedrooms" do
+      expect(building.units_by_number_of_bedrooms).to eq({
+          3 => ["D4" ],
+          2 => ["B2", "C3"],
+          1 => ["A1"]
+        })
+    end
   end
