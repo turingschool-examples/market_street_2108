@@ -89,4 +89,30 @@ describe "building" do
         expect(@building.units_by_number_of_bedrooms[3]).to be_a Array
         expect(@building.units_by_number_of_bedrooms[3]).to include "D4"
     end
+
+    it "can give an annual breakdown" do
+        @building.add_unit(@unit1)
+        @building.add_unit(@unit2)
+        @building.add_unit(@unit3)
+
+        @unit2.add_renter(@renter1)
+        @unit1.add_renter(@renter2)
+
+        expect(@building.annual_breakdown["Spencer"]).to eq 11988
+        expect(@building.annual_breakdown["Jessie"]).to eq 14400
+    end
+
+    it "can give back the rented units" do
+        @building.add_unit(@unit1)
+        @building.add_unit(@unit2)
+        @building.add_unit(@unit3)
+
+        @unit2.add_renter(@renter1)
+        @unit1.add_renter(@renter2)
+
+        expect(@building.rooms_by_renter).to be_a Hash
+        expect(@building.rooms_by_renter.length).to eq 2
+        expect(@building.rooms_by_renter[@renter1][:bathrooms]).to eq 2
+        expect(@building.rooms_by_renter[@renter2][:bedrooms]).to eq 1
+    end
 end

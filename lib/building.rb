@@ -56,4 +56,24 @@ class Building
         end
         {3 => three, 2 => two, 1 => one}
     end
+
+    def annual_breakdown
+        breakdown = {}
+
+        rented_units.each do | unit |
+            breakdown[unit.renter.name] = (unit.monthly_rent * 12)
+        end
+
+        breakdown
+    end
+
+    def rooms_by_renter
+        rooms = {}
+
+        rented_units.each do | unit |
+            rooms[unit.renter] = {bathrooms: unit.bathrooms, bedrooms: unit.bedrooms}
+        end
+
+        rooms
+    end
 end
