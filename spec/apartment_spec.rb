@@ -22,4 +22,13 @@ describe Apartment do
     end
   end
 
+  describe '#add_renter' do
+    it 'adds a renter to the Apartment instance object' do
+      renter1 = Renter.new("Jessie")
+      @unit1.add_renter(renter1)
+
+      expect(@unit1.renter).to eq(renter1)
+    end
+  end
+
 end
