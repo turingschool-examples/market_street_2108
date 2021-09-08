@@ -27,4 +27,9 @@ RSpec.describe 'Iteration 2' do
 
     expect(@building.units).to eq([@unit1, @unit2])
   end
+
+  it 'can have renters' do
+
+    expect(@building.renters).to eq([])
+  end
 end
