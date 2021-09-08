@@ -3,5 +3,6 @@ class Renter
 
   def initialize(name)
     @name = name
+    @rented = false
   end
 end
