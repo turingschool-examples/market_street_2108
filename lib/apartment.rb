@@ -15,6 +15,7 @@ class Apartment
     @renter = renter
   end
 
-  def add_renter
+  def add_renter(renter)
+    @renter = renter
   end
 end
