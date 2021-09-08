@@ -19,6 +19,6 @@ RSpec.describe 'Iteration 2' do
 
   it 'has a unit number' do
 
-    expect(@unit.number).to eq("A1")
+    expect(@unit1.number).to eq("A1")
   end
 end
