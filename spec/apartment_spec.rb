@@ -28,12 +28,12 @@ RSpec.describe Apartment do
   end
 
   it "has nil renters by default" do
-    expect(@unit1.renter).to be nil
+    expect(@unit1.renter).to eq(nil)
   end
 
   it "can add renters" do
     @unit1.add_renter(@renter1)
-    
+
     expect(@unit1.renter).to eq(@renter1)
   end
 end
