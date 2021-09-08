@@ -54,4 +54,16 @@ describe Building do
     end
   end
 
+  describe '#rented_units' do
+    it "returns an array of rented units" do
+      @building.add_unit(@unit1)
+      @building.add_unit(@unit2)
+      @building.add_unit(@unit3)
+      renter1 = Renter.new("Spencer")
+      @unit2.add_renter(renter1)
+
+      expect(@building.rented_units).to eq(@unit2)
+    end
+  end
+
 end
