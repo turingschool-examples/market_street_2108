@@ -25,4 +25,35 @@ class Building
         end
         (unit_rent.sum / @units.length).round(1)
     end
+
+    def rented_units
+        @units.select do | unit |
+            unit.renter != nil
+        end
+    end
+
+    def renter_with_highest_rent
+        highest_unit = rented_units.max_by do | unit |
+            unit.monthly_rent
+        end
+        highest_unit.renter
+    end
+
+    def units_by_number_of_bedrooms
+        one = []
+        two = []
+        three = []
+        @units.each do | unit |
+            if unit.bedrooms == 3
+                three << unit.number
+            elsif unit.bedrooms == 2
+                two << unit.number
+            elsif unit.bedrooms == 1
+                one << unit.number
+            else
+                "why are you here"
+            end
+        end
+        {3 => three, 2 => two, 1 => one}
+    end
 end

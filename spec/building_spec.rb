@@ -49,4 +49,44 @@ describe "building" do
 
         expect(@building.average_rent).to eq 1099.5
     end
+
+    it "can list occupied rooms" do
+        @building.add_unit(@unit1)
+        @building.add_unit(@unit2)
+        @building.add_unit(@unit3)
+
+        expect(@building.rented_units).to eq []
+
+        @unit2.add_renter(@renter2)
+
+        expect(@building.rented_units).to include @unit2
+    end
+
+    it "finds the renter with the heighest rent" do
+        @building.add_unit(@unit1)
+        @building.add_unit(@unit2)
+        @building.add_unit(@unit3)
+
+        @unit2.add_renter(@renter2)
+
+        expect(@building.renter_with_highest_rent).to eq @renter2
+
+        @unit1.add_renter(@renter1)
+
+        expect(@building.renter_with_highest_rent).to eq @renter1
+
+        @unit3.add_renter(@renter3)
+
+        expect(@building.renter_with_highest_rent).to eq @renter1
+    end
+
+    it "returns a hash ordered by number of bedrooms" do
+        @building.add_unit(@unit1)
+        @building.add_unit(@unit2)
+        @building.add_unit(@unit3)
+        @building.add_unit(@unit4)
+
+        expect(@building.units_by_number_of_bedrooms[3]).to be_a Array
+        expect(@building.units_by_number_of_bedrooms[3]).to include "D4"
+    end
 end
